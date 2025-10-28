@@ -227,7 +227,6 @@ Password: demo123
    - Time (optional)
    - Event type (Meeting/Deadline/Reminder/Appointment/Personal)
    - Location (optional)
-   - Reminder (optional)
 4. Click **Create Event**
 
 ### Dashboard

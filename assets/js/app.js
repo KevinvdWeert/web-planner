@@ -1427,18 +1427,8 @@ const EventModal = ({ event, selectedDate, eventTypes, onClose, onSave, onDelete
         date: event?.date || (selectedDate ? selectedDate.toISOString().split('T')[0] : ''),
         time: event?.time || '',
         type: event?.type || 'meeting',
-        location: event?.location || '',
-        reminder: event?.reminder || '15'
+        location: event?.location || ''
     });
-
-    const reminderOptions = [
-        { value: '0', label: 'At time of event' },
-        { value: '5', label: '5 minutes before' },
-        { value: '15', label: '15 minutes before' },
-        { value: '30', label: '30 minutes before' },
-        { value: '60', label: '1 hour before' },
-        { value: '1440', label: '1 day before' }
-    ];
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -1564,21 +1554,6 @@ const EventModal = ({ event, selectedDate, eventTypes, onClose, onSave, onDelete
                             </div>
                             
                             <div className="col-md-6">
-                                <label className="form-label">Reminder</label>
-                                <select
-                                    className="form-select"
-                                    value={formData.reminder}
-                                    onChange={(e) => setFormData({...formData, reminder: e.target.value})}
-                                >
-                                    {reminderOptions.map(option => (
-                                        <option key={option.value} value={option.value}>
-                                            {option.label}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
-                            
-                            <div className="col-12">
                                 <label className="form-label">Location</label>
                                 <input
                                     type="text"
